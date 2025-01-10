@@ -1,7 +1,7 @@
 <?php
 echo "</div>";
 
-echo $cpanel->footer();
+print $cpanel->footer();
 $cpanel->end();     
 
 ?>

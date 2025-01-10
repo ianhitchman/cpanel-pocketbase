@@ -22,7 +22,7 @@ function check_subdomain($subdomain) {
 function create_subdomain($subdomain) {
   $create = CPANEL->uapi('SubDomain','addsubdomain',
     array (
-        'domain' => 'subdomain',
+        'domain' => $subdomain,
         'rootdomain' => PB_DOMAIN_NAME,
         'dir' => PB_HOME_DIR . '/' . $subdomain
     )    

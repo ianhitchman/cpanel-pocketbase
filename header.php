@@ -36,6 +36,7 @@ echo "<pre>";
   $main_domain_details = $domain_info['result']['data']['main_domain'] ?? null;
   $main_domain = $main_domain_details['domain'] ?? null;
   $home_dir = $main_domain_details['homedir'] ?? null;
+  $main_user = $main_domain_details['user'] ?? null;
   if (!$main_domain || !$home_dir) {
     throw new Exception("Unable to get domain details.");
   }
@@ -51,6 +52,7 @@ echo "<pre>";
   define("PB_URL", "https://" . PB_DOMAIN_NAME);
   define("PB_SUBDOMAINS", $subdomains);
   define("PB_HOME_DIR", $home_dir);
+  define("PB_USER", $main_user);
 
   include('functions.php');
     

@@ -1,0 +1,10 @@
+* As root user *
+
+Move pocketbase-setup.sh to /usr/local/bin/pocketbase-setup.sh
+sudo chmod 755 pocketbase-setup.sh
+Change its ownership to root
+sudo chown root pocketbase-setup.sh
+
+Allow sudo execution of script by all users:
+sudo visudo
+ALL ALL=(ALL) NOPASSWD: /usr/local/bin/pocketbase-setup.sh

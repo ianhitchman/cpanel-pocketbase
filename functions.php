@@ -115,25 +115,12 @@ function is_port_in_use($port) {
   return !empty($output);
 }
 
-function setup_daemon($subdomain, $port) {
-  $home_dir = PB_HOME_DIR . '/' . $subdomain;
-  $full_domain = $subdomain . '.' . PB_DOMAIN_NAME;
-  $command = "pocketbase serve --host 0.0.0.0 --port $port";
-  $script = "[Unit]
-Description=API for $full_domain
-After=network.target
-
-[Service]
-ExecStart=/home/w3vps1/api/w3vps1/pocketbase serve --http 127.0.0.1:8091
-WorkingDirectory=/home/w3vps1/api/w3vps1/
-Restart=always
-User=w3vps1
-Group=w3vps1
-RestartSec=10
-Environment=PATH=/usr/bin:/usr/local/bin
-
-[Install]
-WantedBy=multi-user.target";
+function setup_daemon($subdomain, $port) { 
+  $install_script = "/usr/local/bin/pocketbase-setup.sh";
+  if (!file_exists($install_script)) {
+    throw new Exception("Unable to find $install_script. If you are admin, please check readme.");
+  }
+  exec("sudo $install_script PB_DOMAIN_NAME $subdomain $port");
 }
 
 function flush_output() {

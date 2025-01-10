@@ -6,7 +6,7 @@ try {
 
 } catch (Exception $e) {
   echo "<section class=\"pocketbase-error\">" . $e->getMessage() . "</section>";
-  include('form.php')
+  include('form.php');
 }
 
 ?>

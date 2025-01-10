@@ -1,7 +1,7 @@
 <?php
 include("/usr/local/cpanel/php/cpanel.php");
 $cpanel = new CPANEL();
-print $cpanel->header( "Pocketbase installer" );
+print $cpanel->header();
 
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
 echo "<div class=\"pocketbase-container\">";

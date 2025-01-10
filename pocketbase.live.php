@@ -57,7 +57,7 @@ try {
   foreach ($subdomain as $subdomain_name) {
     echo "<section>";
     echo "<div>https://</div>";
-    echo $subdomain;
+    echo $subdomain_name;
     echo "<div>." . PB_DOMAIN_NAME . "</div>";
     echo "</section>";
   }

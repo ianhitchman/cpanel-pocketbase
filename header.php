@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="./pocketbase.css" />
 <div class="pocketbase-container">
 
 <?php
@@ -36,9 +37,7 @@ try {
   define("PB_URL", "https://" . PB_DOMAIN_NAME);
   define("PB_SUBDOMAINS", $subdomains);
   define("PB_HOME_DIR", $home_dir);
-  
-  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
-  
+    
 } catch (Exception $e) {
   echo $e->getMessage();
 }

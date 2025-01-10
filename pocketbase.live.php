@@ -32,7 +32,4 @@ echo "<section>";
 echo "<button id=\"create\">Proceed</button>";
 echo "</section>";
 
-echo "<pre>";
-print_r($domain_info);
-echo "</pre>";                          // Disconnect from cPanel - only do this once.
 ?>

@@ -10,8 +10,8 @@ try {
   echo "<section>";
   echo "Creating subdomain...";
   echo "</section>";
-  
-  flush();
+
+  flush_output();
   sleep(5);
 
   echo "DONE!";

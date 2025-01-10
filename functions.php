@@ -19,4 +19,10 @@ function check_subdomain($subdomain) {
   return array('error' => $error);  
 }
 
+function flush_output() {
+  echo str_repeat(' ', 1024);
+  ob_flush();
+  flush();
+}
+
 ?>

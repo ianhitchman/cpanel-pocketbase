@@ -2,7 +2,7 @@
 
 function check_domain_format($domain) {
   // can have a-z, 0-9, and hyphens, must not start or end with a hyphen
-  return preg_match('/^[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?$/i', $domain);
+  return preg_match('/^[a-z0-9][a-z0-9\-\.]*[a-z0-9]$/i', $domain);
 }
 
 function check_subdomain($subdomain) { 

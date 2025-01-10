@@ -8,6 +8,8 @@ ob_implicit_flush(true);
 
 include("/usr/local/cpanel/php/cpanel.php");
 $cpanel = new CPANEL();
+define("CPANEL_API", $cpanel->uapi);
+
 print $cpanel->header();
 
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
@@ -17,7 +19,7 @@ echo "<img src=\"./pocketbase-logo.png\" alt=\"Pocketbase\" />";
 echo "</section>";
 
 try {
-  $domain_info = $cpanel->uapi( 
+  $domain_info = CPANEL_API( 
     'DomainInfo', 'domains_data',
     array(
         'format'    => 'hash',

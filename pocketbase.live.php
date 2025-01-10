@@ -21,6 +21,13 @@ try {
   if (!$main_domain) {
     throw new Exception("Unable to get domain details.");
   }
+
+  $subdomain = [];
+  $main_domain_length = strlen($main_domain);
+  $end_offset = 0 - ($main_domain_length + 1);
+  foreach ($domain_info['result']['data']['sub_domains'] as $subdomain_details) {
+    $subdomain[] = substr($subdomain_details['domain'], 0, $end_offset);
+  }
     
   define("PB_DOMAIN_NAME", $main_domain);
   define("PB_URL", "https://" . PB_DOMAIN_NAME);
@@ -46,6 +53,14 @@ try {
   echo "<section>";
   echo "If you leave this blank, the server will be accessible via a designated port instead<br />(e.g." . PB_URL . ":8080).";
   echo "</section>";
+
+  foreach ($subdomain as $subdomain_name) {
+    echo "<section>";
+    echo "<div>https://</div>";
+    echo $subdomain;
+    echo "<div>." . PB_DOMAIN_NAME . "</div>";
+    echo "</section>";
+  }
   
   echo "<section>";
   echo "<button id=\"create\">Proceed</button>";

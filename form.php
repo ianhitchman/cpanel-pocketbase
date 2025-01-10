@@ -6,7 +6,7 @@ echo "</section>";
 
 echo "<section>";
 echo "<div>https://</div>";
-echo "<input type=\"text\" id=\"subdomain\" name=\"subdomain\" />";
+echo "<input type=\"text\" id=\"subdomain\" name=\"subdomain\" value=\"" . htmlentities($_POST['subdomain']) . "\" />";
 echo "<div>." . PB_DOMAIN_NAME . "</div>";
 echo "</section>";
 

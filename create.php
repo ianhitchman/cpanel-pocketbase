@@ -6,8 +6,17 @@ try {
   if ($check_subdomain['error']) {
     throw new Exception($check_subdomain['error']);
   }
+  
+  echo "<section>";
+  echo "Creating subdomain...";
+  echo "</section>";
+  
+  flush_output();
+  sleep(5);
 
   echo "DONE!";
+
+
 
 } catch (Exception $e) {
   echo "<section class=\"pocketbase-error\">" . $e->getMessage() . "</section>";

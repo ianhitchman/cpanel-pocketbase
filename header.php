@@ -40,6 +40,8 @@ try {
   define("PB_URL", "https://" . PB_DOMAIN_NAME);
   define("PB_SUBDOMAINS", $subdomains);
   define("PB_HOME_DIR", $home_dir);
+
+  include('functions.php');
     
 } catch (Exception $e) {
   echo $e->getMessage();

@@ -1,8 +1,13 @@
 <?php
-
 try {
 
-  throw new Exception("Not implemented yet.");
+  $submitted_subdomain = $_POST['subdomain'];
+  $check_subdomain = check_subdomain($submitted_subdomain);
+  if ($check_subdomain['error']) {
+    throw new Exception($check_subdomain['message']);
+  }
+
+  echo "DONE!";
 
 } catch (Exception $e) {
   echo "<section class=\"pocketbase-error\">" . $e->getMessage() . "</section>";

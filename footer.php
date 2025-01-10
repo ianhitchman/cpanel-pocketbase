@@ -1,7 +1,7 @@
 <?php
 echo "</form>";
 
-print $cpanel->footer();
-$cpanel->end();     
+print CPANEL->footer();
+CPANEL->end();     
 
 ?>

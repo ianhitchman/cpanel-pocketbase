@@ -20,7 +20,7 @@ function check_subdomain($subdomain) {
 }
 
 function flush_output() {
-  echo str_repeat(' ', 1024);
+  echo str_repeat(' ', 1024 * 100);
   ob_flush();
   flush();
 }

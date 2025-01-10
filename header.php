@@ -1,10 +1,10 @@
-<link rel="stylesheet" type="text/css" href="./pocketbase.css" />
-<div class="pocketbase-container">
-
 <?php
 include("/usr/local/cpanel/php/cpanel.php");  // Instantiate the CPANEL object.
 $cpanel = new CPANEL();
 echo $cpanel->header();
+
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
+echo "<div class=\"pocketbase-container\">";
 
 try {
   $domain_info = $cpanel->uapi( 

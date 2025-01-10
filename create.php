@@ -12,7 +12,10 @@ try {
   echo "</section>";
 
   flush_output();  
-  create_subdomain($submitted_subdomain);
+  $create = create_subdomain($submitted_subdomain);
+  if ($create['error']) {
+    throw new Exception($create['error']);
+  }
 
   echo "DONE!";
 

@@ -27,9 +27,13 @@ function create_subdomain($subdomain) {
         'dir' => PB_HOME_DIR . '/' . $subdomain
     )    
   );
-  echo "<pre>";
-  print_r($create);
-  echo "</pre>";
+  $errors = $create['cpanelresult']['result']['errors'] ?? null;
+  if (is_array($errors)) {
+    $errors_str = "<p>" . implode('</p><p>', $errors) . "</p>";
+  }
+  if (isset($errors_str)) {
+    return array('error' => $errors_str);
+  }
 }
 
 function flush_output() {

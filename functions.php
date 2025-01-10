@@ -19,6 +19,19 @@ function check_subdomain($subdomain) {
   return array('error' => $error);  
 }
 
+function create_subdomain($subdomain) {
+  $create = CPANEL->uapi('SubDomain','addsubdomain',
+    array (
+        'domain' => 'subdomain',
+        'rootdomain' => PB_DOMAIN_NAME,
+        'dir' => PB_HOME_DIR . '/' . $subdomain
+    )    
+  );
+  echo "<pre>";
+  print_r($create);
+  echo "</pre>";
+}
+
 function flush_output() {
   echo str_repeat(' ', 1024 * 100);
   ob_flush();

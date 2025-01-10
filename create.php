@@ -11,8 +11,8 @@ try {
   echo "Creating subdomain...";
   echo "</section>";
 
-  flush_output();
-  sleep(5);
+  flush_output();  
+  create_subdomain($submitted_subdomain);
 
   echo "DONE!";
 

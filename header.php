@@ -30,6 +30,8 @@ try {
   if (!$domain_info) {
     throw new Exception("Unable to get account details.");
   }
+
+  print_r($domain_info); exit;
     
   $main_domain_details = $domain_info['result']['data']['main_domain'] ?? null;
   $main_domain = $main_domain_details['domain'] ?? null;

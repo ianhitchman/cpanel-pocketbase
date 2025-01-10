@@ -2,20 +2,14 @@
 try {
 
   $submitted_subdomain = $_POST['subdomain'];
-  $check_subdomain = check_subdomain($submitted_subdomain);
-  if ($check_subdomain['error']) {
-    throw new Exception($check_subdomain['error']);
-  }
+  check_subdomain($submitted_subdomain);
   
   echo "<section>";
   echo "Creating subdomain...";
   echo "</section>";
 
   flush_output();  
-  $create = create_subdomain($submitted_subdomain);
-  if ($create['error']) {
-    throw new Exception($create['error']);
-  }
+  create_subdomain($submitted_subdomain);
 
   echo "DONE!";
 

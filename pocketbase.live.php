@@ -32,4 +32,7 @@ echo "<section>";
 echo "<button id=\"create\">Proceed</button>";
 echo "</section>";
 
+
+include_once("./footer.php");
+
 ?>

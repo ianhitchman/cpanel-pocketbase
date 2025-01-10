@@ -1,5 +1,5 @@
 <?php
-include("/usr/local/cpanel/php/cpanel.php");  // Instantiate the CPANEL object.
+include("/usr/local/cpanel/php/cpanel.php");
 $cpanel = new CPANEL();
 print $cpanel->header( "Pocketbase installer" );
 

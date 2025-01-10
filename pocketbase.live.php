@@ -44,7 +44,7 @@ try {
   echo "</section>";
   
   echo "<section>";
-  echo "If you leave this blank, the server will be accessible via a designated port instead (e.g." . PB_URL . ":8080).";
+  echo "If you leave this blank, the server will be accessible via a designated port instead<br />(e.g." . PB_URL . ":8080).";
   echo "</section>";
   
   echo "<section>";
@@ -52,7 +52,7 @@ try {
   echo "</section>";
   
   echo "<pre>";
-  print_r($account);
+  print_r($domain_info);
   echo "</pre>";
   
   echo "</div>";

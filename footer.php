@@ -1,5 +1,5 @@
 <?php
-echo "</div>";
+echo "</form>";
 
 print $cpanel->footer();
 $cpanel->end();     

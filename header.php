@@ -4,7 +4,10 @@ $cpanel = new CPANEL();
 print $cpanel->header();
 
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
-echo "<div class=\"pocketbase-container\">";
+echo "<form class=\"pocketbase-container\" method=\"post\">";
+echo "<section>";
+echo "<img src=\"./pocketbase-logo.png\" alt=\"Pocketbase\" />";
+echo "</section>";
 
 try {
   $domain_info = $cpanel->uapi( 

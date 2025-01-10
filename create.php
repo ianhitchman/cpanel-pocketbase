@@ -11,7 +11,7 @@ try {
   echo "Creating subdomain...";
   echo "</section>";
   
-  flush_output();
+  flush();
   sleep(5);
 
   echo "DONE!";

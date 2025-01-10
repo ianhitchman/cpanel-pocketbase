@@ -1,4 +1,11 @@
 <?php
+
+// Disable output buffering if it's enabled
+if (ob_get_level()) {
+  ob_end_flush();
+}
+ob_implicit_flush(true);
+
 include("/usr/local/cpanel/php/cpanel.php");
 $cpanel = new CPANEL();
 print $cpanel->header();

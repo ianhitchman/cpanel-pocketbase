@@ -19,9 +19,4 @@ function check_subdomain($subdomain) {
   return array('error' => $error);  
 }
 
-function flush_output() {
-  ob_flush();
-  flush();
-}
-
 ?>

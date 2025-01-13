@@ -121,7 +121,7 @@ function setup_daemon($subdomain, $port) {
     throw new Exception("Unable to find $install_script. If you are admin, please check readme.");
   }
   $output = [];
-  $run_task = "sudo $install_script PB_DOMAIN_NAME $subdomain $port";
+  $run_task = "sudo $install_script " . PB_DOMAIN_NAME . " $subdomain $port";
   $output[] = $run_task;
   exec($run_task, $output);
   return $output;

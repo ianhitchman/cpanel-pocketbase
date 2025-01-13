@@ -15,7 +15,7 @@ print CPANEL->header();
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"./pocketbase.css\" />";
 echo "<form class=\"pocketbase-container\" method=\"post\">";
 echo "<section>";
-echo "<img src=\"./pocketbase-logo.png\" alt=\"Pocketbase\" />";
+echo "<img src=\"./pocketbase-logo.png\" alt=\"Pocketbase\" width=\"463\" height=\"109\" />";
 echo "</section>";
 
 try {

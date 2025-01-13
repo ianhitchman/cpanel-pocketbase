@@ -35,8 +35,8 @@ Description=Pocketbase for $subdomain.$domain
 After=network.target
 
 [Service]
-ExecStart=/home/$user/$subdomain/pocketbase serve --http 127.0.0.1:$port
-WorkingDirectory=/home/$user/$subdomain
+ExecStart=/home/$user/$subdomain.$domain/pocketbase serve --http 127.0.0.1:$port
+WorkingDirectory=/home/$user/$subdomain.$domain
 Restart=always
 User=$user
 Group=$group

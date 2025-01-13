@@ -19,12 +19,17 @@ try {
   echo "</section>";
 
   echo "<section>";
+  echo "Installing Pocketbase in subdomain home dir... ";
+  flush_output();  
+  install_pocketbase($submitted_subdomain);
+  echo "OK";
+  echo "</section>";
+
+  echo "<section>";
   echo "Set up service... ";
   flush_output(); 
-  $output = setup_daemon($submitted_subdomain, $port);
-  echo "<pre>";
-  print_r($output);
-  echo "</pre>";
+  setup_daemon($submitted_subdomain, $port);
+  echo "OK";
   echo "</section>";
 
   echo "<section>";

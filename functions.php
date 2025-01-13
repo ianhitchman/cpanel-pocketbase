@@ -18,11 +18,12 @@ function check_subdomain($subdomain) {
 }
 
 function create_subdomain($subdomain) {
+  $full_domain = $subdomain . '.' . PB_DOMAIN_NAME;
   $create = CPANEL->uapi('SubDomain','addsubdomain',
     array (
         'domain' => $subdomain,
         'rootdomain' => PB_DOMAIN_NAME,
-        'dir' => PB_HOME_DIR . '/' . $subdomain
+        'dir' => PB_HOME_DIR . '/' . $full_domain
     )    
   );
   $errors = $create['cpanelresult']['result']['errors'] ?? null;
@@ -35,7 +36,8 @@ function create_subdomain($subdomain) {
 }
 
 function check_pocketbase($subdomain) {
-  $home_dir = PB_HOME_DIR . '/' . $subdomain;
+  $full_domain = $subdomain . '.' . PB_DOMAIN_NAME;
+  $home_dir = PB_HOME_DIR . '/' . $full_domain;
   if (!file_exists($home_dir)) {
     throw new Exception("Home folder '$home_dir' doesn't exist. Possibly an error while creating subdomain.");
   }
@@ -45,7 +47,8 @@ function check_pocketbase($subdomain) {
 }
 
 function install_pocketbase($subdomain) {
-  $home_dir = PB_HOME_DIR . '/' . $subdomain;
+  $full_domain = $subdomain . '.' . PB_DOMAIN_NAME;
+  $home_dir = PB_HOME_DIR . '/' . $full_domain;
   check_pocketbase($subdomain);
   $versions = get_pocketbase_versions();
   $latest_version = $versions['latest_version'] ?? null;

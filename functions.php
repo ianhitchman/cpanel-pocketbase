@@ -120,7 +120,9 @@ function setup_daemon($subdomain, $port) {
   if (!file_exists($install_script)) {
     throw new Exception("Unable to find $install_script. If you are admin, please check readme.");
   }
-  exec("sudo $install_script PB_DOMAIN_NAME $subdomain $port");
+  $output = [];
+  exec("sudo $install_script PB_DOMAIN_NAME $subdomain $port", $output);
+  return $output;
 }
 
 function flush_output() {

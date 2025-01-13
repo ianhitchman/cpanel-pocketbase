@@ -128,6 +128,7 @@ function setup_daemon($subdomain, $port) {
 }
 
 function flush_output() {
+  sleep(1);
   echo str_repeat(' ', 1024 * 100);
   ob_flush();
   flush();

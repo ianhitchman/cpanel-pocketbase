@@ -59,9 +59,9 @@ sudo systemctl start pocketbase-$subdomain.service
 apache_conf_dir="/etc/apache2/conf.d/userdata"
 
 # SSL Configuration file
-ssl_conf_file="$apache_conf_dir/ssl/2_4/$user/pocketbase/$subdomain.$domain/$subdomain.conf"
+ssl_conf_file="$apache_conf_dir/ssl/2_4/$user/$subdomain.$domain/$subdomain.conf"
 # Standard Configuration file
-std_conf_file="$apache_conf_dir/std/2_4/$user/pocketbase/$subdomain.$domain/$subdomain.conf"
+std_conf_file="$apache_conf_dir/std/2_4/$user/$subdomain.$domain/$subdomain.conf"
 
 # Ensure the directories exist
 sudo mkdir -p "$(dirname "$ssl_conf_file")"
